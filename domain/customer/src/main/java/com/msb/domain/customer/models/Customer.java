@@ -8,7 +8,10 @@ import com.msb.domain.shared.vo.Address;
 import com.msb.domain.shared.vo.CustomerId;
 import com.msb.domain.shared.vo.IdentificationCard;
 import com.msb.supports.domain.AggregateRoot;
-import lombok.*;
+import com.msb.supports.util.JsonUtil;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 
@@ -16,9 +19,7 @@ import java.time.LocalDateTime;
 @Builder
 @Data
 public class Customer extends AggregateRoot<CustomerId> {
-  @Getter(AccessLevel.NONE)
   private CustomerId customerId;
-
   private String fullName;
   private String mobileNumber;
   private String email;
@@ -35,7 +36,11 @@ public class Customer extends AggregateRoot<CustomerId> {
   private LocalDateTime updatedAt;
 
   @Override
-  public CustomerId getIdentifier() {
-    return customerId;
+  public String toString() {
+    try {
+      return JsonUtil.toPrettyJson(this);
+    } catch (Exception exception) {
+      return super.toString();
+    }
   }
 }
