@@ -1,0 +1,2 @@
+- customer: for landing page site
+- staff: for admin site
