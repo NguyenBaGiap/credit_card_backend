@@ -1,0 +1,9 @@
+package com.msb.domain.finance.models;
+
+public enum DocumentCode {
+  EVIDENCE_LABOR_CONTRACT,
+  EVIDENCE_STATEMENT_SALARY,
+  EVIDENCE_CREDIT_CARD,
+  EVIDENCE_INSURANCE_CONTRACT,
+  EVIDENCE_INSURANCE_PREMIUM,
+}

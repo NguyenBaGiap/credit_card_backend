@@ -1,13 +1,12 @@
 package com.msb.domain.ekyc.models;
 
-import com.msb.domain.shared.vo.CustomerId;
-import com.msb.domain.shared.vo.EkycFaceMatching;
-import com.msb.domain.shared.vo.EkycOcr;
-import com.msb.domain.shared.vo.EkycProfileId;
+import com.msb.domain.shared.vo.*;
 import com.msb.supports.domain.AggregateRoot;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.time.LocalDateTime;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -17,5 +16,8 @@ public class EkycProfile extends AggregateRoot<EkycProfileId> {
     private CustomerId customerId;
     private EkycOcr ekycOcr;
     private EkycFaceMatching ekycFaceMatching;
+    private EkycFaceVideo ekycFaceVideo;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
 }
