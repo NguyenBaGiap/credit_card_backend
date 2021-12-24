@@ -17,10 +17,12 @@ public class ConsultancyRequestTicket extends AggregateRoot<ConsultancyRequestTi
   private ConsultancyRequestTicketId consultancyRequestTicketId;
   private CustomerId customerId;
   private String fullName;
+  private String email;
+  private String mobileNumber;
   private ConsultancyChanel consultancyChanel;
   private String informationAdditional;
   private String timeReceiveConsultancy;
-  private BranchCode transactionLocation;
+  private BranchCode transactionLocationCode;
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
 }

@@ -7,7 +7,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -24,16 +23,18 @@ public class EkycProfileEntity extends AbstractEntity<Long> {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="customerId")
     private CustomerEntity customer;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ekycProfile")
-    private Set<EkycOcrLivenessEntity> ekycOcrLivenessEntityList = new HashSet<>();
-
-    @Column(name = "createdAt", columnDefinition = "timestamp")
+    private String idFrontImage;
+    private String idBackImage;
+    private String idFaceImage;
+    private String idFaceUpImage;
+    private String idFaceLeftImage;
+    private String idFaceRightImage;
+    private String idFaceVideo;
     protected LocalDateTime createdAt;
 
-    @Column(name = "updatedAt", columnDefinition = "timestamp")
     protected LocalDateTime updatedAt;
 }

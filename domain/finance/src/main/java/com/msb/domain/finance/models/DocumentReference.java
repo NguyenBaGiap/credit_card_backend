@@ -4,6 +4,6 @@ import lombok.Value;
 
 @Value
 public class DocumentReference {
-    String referenceImage;
-    DocumentCode referenceCode;
+    String idReferenceImage;
+    DocumentCode documentCode;
 }
