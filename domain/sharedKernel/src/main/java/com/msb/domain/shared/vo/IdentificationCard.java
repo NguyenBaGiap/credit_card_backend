@@ -7,9 +7,10 @@ import java.time.LocalDateTime;
 
 @Value
 public class IdentificationCard {
-  String legalId;
-  String dateOfIssue;
+  String pid;
+  LocalDateTime dateOfIssue;
   String placeOfIssue;
-  LocalDateTime birthday;
+  LocalDateTime dob;
   Gender gender;
+
 }

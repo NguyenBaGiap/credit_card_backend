@@ -31,7 +31,7 @@ public class Customer extends AggregateRoot<CustomerId> {
   private CustomerType customerType;
   private String profileCustomerType;
   private Address currentAddress;
-  private Address residentAddress;
+  private Address residentialAddress;
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
 

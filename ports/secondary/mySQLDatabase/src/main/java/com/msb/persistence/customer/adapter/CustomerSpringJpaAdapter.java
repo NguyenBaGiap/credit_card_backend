@@ -26,19 +26,22 @@ public class CustomerSpringJpaAdapter implements CustomerPersistencePort {
 
   @Override
   public Optional<Customer> findByMobileNumber(String mobileNumber) {
-    return customerRepository.findByMobileNumber(mobileNumber).map(customerMapper::entityToDomain);
+    return customerRepository.findByMobileNumber(mobileNumber).map(customerMapper::fromEntity);
   }
 
   @Override
   public Optional<Customer> findByID(CustomerId customerId) {
-    return customerRepository.findById(customerId.getValue()).map(customerMapper::entityToDomain);
+    return customerRepository.findById(customerId.getValue()).map(customerMapper::fromEntity);
   }
 
   @Override
   public Customer save(Customer customer) throws BusinessException {
-    Function<Customer, CustomerEntity> m1 = customerMapper::domainToEntity;
-    Function<CustomerEntity, Customer> m2 = customerMapper::entityToDomain;
+    Function<Customer, CustomerEntity> m1 = customerMapper::fromDomain;
+    Function<CustomerEntity, Customer> m2 = customerMapper::fromEntity;
     Function<CustomerEntity, CustomerEntity> save = customerRepository::save;
+    Customer test = customerRepository.findById(10L).map(m2).orElse(null);
+    assert test != null;
+    log.info(test.toString());
     return Optional.ofNullable(customer)
         .map(m1.andThen(save).andThen(m2))
         .orElseThrow(() -> new BusinessException(MessageUtil.Customer.CUSTOMER_REGISTER_ERROR));

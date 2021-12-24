@@ -4,7 +4,6 @@ import lombok.Value;
 
 @Value
 public class Address {
-  String countryCode;
   String provinceCode;
   String districtCode;
   String wardCode;
