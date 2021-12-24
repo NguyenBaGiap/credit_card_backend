@@ -38,6 +38,26 @@
             <artifactId>s3</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.msb</groupId>
+            <artifactId>consultancy</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.msb</groupId>
+            <artifactId>ekyc</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.msb</groupId>
+            <artifactId>finance</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.msb</groupId>
+            <artifactId>creditCardRegistration</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--    DOMAIN  -->
         <dependency>
             <groupId>org.springframework</groupId>

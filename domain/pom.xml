@@ -26,6 +26,7 @@
         <module>finance</module>
         <module>creditCardRegistration</module>
         <module>consultancy</module>
+        <module>notification</module>
     </modules>
 
 </project>

@@ -18,7 +18,7 @@ public class S3StoredAdapter implements S3StoredPort {
   @Value("${s3.credential.accessKey}")
   private String accessKey;
 
-  @Value("${s3.credential.accessKey}")
+  @Value("${s3.credential.secretKey}")
   private String secretKey;
 
   public final AmazonS3 s3clientBuilder() {
