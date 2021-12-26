@@ -1,6 +1,9 @@
 package com.msb.persistence.customer.entity;
 
 import com.msb.domain.shared.constant.*;
+import com.msb.persistence.adsense.entity.AdsenseEntity;
+import com.msb.persistence.creditCard.entity.CreditCardEntity;
+import com.msb.persistence.creditCardRating.entity.CreditCardRatingEntity;
 import com.msb.persistence.creditCardRegistraction.entity.CreditCardRegistrationProfileEntity;
 import com.msb.persistence.ekyc.entity.EkycProfileEntity;
 import com.msb.supports.record.AbstractEntity;
@@ -33,9 +36,7 @@ public class CustomerEntity extends AbstractEntity<Long> {
   private String mobileNumber;
 
   private String email;
-
   private String fullName;
-
   private String profileCustomerType;
 
   @Enumerated(EnumType.STRING)
@@ -51,33 +52,23 @@ public class CustomerEntity extends AbstractEntity<Long> {
   private CustomerType customerType;
 
   private String pid;
-
   private LocalDateTime pidIssuedDate;
-
   private String pidIssuedPlace;
 
   @Enumerated(EnumType.STRING)
   private Gender gender;
-
   private LocalDateTime dob;
-
   private String countryCode;
-
   private String residentialProvinceCode;
-
   private String residentialDistrictCode;
-
   private String residentialWardCode;
-
   private String residentialAddressDetails;
-
   private String currentProvinceCode;
-
   private String currentDistrictCode;
-
   private String currentWardCode;
-
   private String currentAddressDetails;
+  private LocalDateTime createdAt;
+  private LocalDateTime updatedAt;
 
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
   private Set<EkycProfileEntity> ekycProfiles = new HashSet<>();
@@ -85,9 +76,11 @@ public class CustomerEntity extends AbstractEntity<Long> {
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
   private Set<CreditCardRegistrationProfileEntity> cardRegistrationProfiles = new HashSet<>();
 
-  protected LocalDateTime createdAt;
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+  private Set<AdsenseEntity> adsenseInformation = new HashSet<>();
 
-  protected LocalDateTime updatedAt;
+  @OneToMany(mappedBy = "customer")
+  private Set<CreditCardRatingEntity> creditCardRatings;
 
   @Override
   public Long getId() {

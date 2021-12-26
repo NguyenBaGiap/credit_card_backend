@@ -31,6 +31,10 @@ public class MessageUtil {
   public static class Auth {
     public static final String AUTH_ACCESS_DENIED = "auth.access_denied";
   }
+  public static class Validation {
+    public static final String METHOD_ARGUMENT_VALID = "validation.method.argument.error"; // MethodArgumentNotValidException
+    public static final String MOBILE_NUMBER_VALID = "validation.mobile_number.error";
+  }
 
   public static class Customer {
     public static final String CUSTOMER_REGISTER_ERROR = "customer.register.error";

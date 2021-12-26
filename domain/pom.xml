@@ -27,6 +27,8 @@
         <module>creditCardRegistration</module>
         <module>consultancy</module>
         <module>notification</module>
+        <module>otp</module>
+        <module>adsense</module>
     </modules>
 
 </project>

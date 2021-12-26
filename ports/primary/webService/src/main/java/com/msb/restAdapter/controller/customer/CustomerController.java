@@ -5,10 +5,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/private")
+@RequestMapping(value = "/api/private/customer")
 public class CustomerController {
-  @RequestMapping(value = "/test", method = RequestMethod.GET)
-  public String testPrivateController() {
-    return "test private api";
+
+  @RequestMapping(value = "/info", method = RequestMethod.GET)
+  public String resolveCurrentCustomer() {
+    return "information current customer session";
   }
+
+  @RequestMapping(value = "/confirm-otp", method = RequestMethod.POST)
+  public String confirmOtpByCustomer() {
+    return "api confirm otp step 02";
+  }
+
+  @RequestMapping(value = "/address", method = RequestMethod.POST)
+  public String registerCurrentAddressOfCustomer() {
+    return "api submit current address";
+  }
+
 }
