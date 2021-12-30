@@ -18,15 +18,16 @@ public class CreditCardRatingEntity extends AbstractEntity<CardRatingKey> {
 
     @EmbeddedId
     private CardRatingKey id;
+
     @ManyToOne
     @MapsId("customerId")
     @JoinColumn(name = "customerId")
     private CustomerEntity customer;
 
     @ManyToOne
-    @MapsId("courseId")
+    @MapsId(value = "creditCardId")
     @JoinColumn(name = "creditCardId")
-    private CreditCardEntity creditCard;
+    private CreditCardEntity creditCard; // CreditCard
     private String comment;
 
     @Override
